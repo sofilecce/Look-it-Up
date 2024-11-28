@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.browser-window {
+    width: 80%;
+    margin: 50px auto;
+    border: 5px solid #8B0000;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.browser-bar {
+    background-color: #8B0000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.controls .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.controls .red {
+    background-color: #ff605c;
+}
+
+.controls .yellow {
+    background-color: #ffbd44;
+}
+
+.controls .green {
+    background-color: #00ca4e;
+}
+
+.content {
+    background-color: #008B8B;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    color: white;
+}
+
+.logo-text {
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.trees {
+    height: 150px;
+    background: url('trees.png') center/contain no-repeat;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    margin: 20px auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #654321;
+    border-radius: 30px;
+    padding: 10px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    flex: 1;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #8B4513;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
