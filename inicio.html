@@ -1,55 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Look it Up!</title>
-  <link rel="stylesheet" href="inicio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look it Up!</title>
+    <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Look it Up!</div>
-    <div class="search-container">
-      <input type="text" class="search-bar" placeholder="Buscar...">
-      <button class="search-button">
-        <span>🔍</span>
-      </button>
-    </div>
-  </header>
-
-  <nav class="navbar">
-    <a href="#">Todo</a>
-    <a href="#">Noticias</a>
-    <a href="#">Imágenes</a>
-    <a href="#">Videos</a>
-    <a href="#">Compras</a>
-    <a href="#">Economía</a>
-    <a href="#">Clima</a>
-  </nav>
-
-  <main>
-    <section class="results">
-      <div class="result-card">
-        <div class="thumbnail"></div>
-        <div class="content"></div>
-      </div>
-      <div class="result-card">
-        <div class="thumbnail"></div>
-        <div class="content"></div>
-      </div>
-      <div class="result-card">
-        <div class="thumbnail"></div>
-        <div class="content"></div>
-      </div>
-    </section>
-
-    <aside class="side-content">
-      <div class="profile-pic"></div>
-      <div class="side-box"></div>
-    </aside>
-  </main>
-
-  <script src="inicio.js"></script>
+    <header>
+        <h1>Look it Up!</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Escribe tu búsqueda aquí...">
+            <button id="search-button">🔍</button>
+        </div>
+        <nav>
+            <ul>
+                <li>Todo</li>
+                <li>Noticias</li>
+                <li>Imágenes</li>
+                <li>Videos</li>
+                <li>Compras</li>
+                <li>Economía</li>
+                <li>Clima</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="results-container"></div>
+    </main>
+    <script src="inicio.js"></script>
 </body>
 </html>
 
