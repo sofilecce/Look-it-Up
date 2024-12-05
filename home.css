@@ -1,107 +1,99 @@
+/* General */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #8B0000; /* Fondo externo en rojo oscuro */
 }
 
+/* Ventana del navegador */
 .browser-window {
-    width: 80%;
-    margin: 50px auto;
-    border: 5px solid #8B0000;
-    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    max-width: 1015px;
+    max-height: 611px;
     background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 8px solid #0e3f58; /* Azul oscuro */
+    border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
-.browser-bar {
-    background-color: #8B0000;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.controls .circle {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.controls .red {
-    background-color: #ff605c;
-}
-
-.controls .yellow {
-    background-color: #ffbd44;
-}
-
-.controls .green {
-    background-color: #00ca4e;
-}
-
+/* Contenido */
 .content {
-    background-color: #008B8B;
     text-align: center;
     padding: 50px 20px;
+    background-color: #008B8B; /* Verde azulado */
+    height: 100%;
     position: relative;
-    color: white;
 }
 
+/* Fondo con árboles */
+.tree-background {
+    background: url('trees.png') no-repeat center;
+    background-size: contain;
+    padding: 30px;
+}
+
+/* Título */
 .logo-text {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    font-family: "Georgia", serif;
 }
 
-.trees {
-    height: 150px;
-    background: url('trees.png') center/contain no-repeat;
-    margin-bottom: 20px;
-}
-
+/* Barra de búsqueda */
 .search-container {
-    margin: 20px auto;
+    margin-top: 50px;
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    background-color: #654321;
-    border-radius: 30px;
-    padding: 10px 20px;
     max-width: 500px;
-    margin: 0 auto;
+    background-color: #774d1e;
 }
 
 .search-box input {
-    border: none;
     outline: none;
-    background: transparent;
     color: white;
-    font-size: 16px;
-    flex: 1;
+    background: none;
 }
 
 .search-box button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
     cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Botón de cierre de sesión */
+.logout-container {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    text-align: center;
 }
 
 .logout-btn {
-    background-color: #8B4513;
     border: none;
-    padding: 10px 20px;
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    background: none;
+    padding: 0;
 }
 
+.logout-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #774d1e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5ecd9; /* Color de la lechuza */
+    font-size: 25px;
+}
+
+.logout-text {
+    display: block;
+    color: #f5ecd9;
+    font-size: 14px;
+    margin-top: 5px;
+}
