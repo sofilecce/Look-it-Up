@@ -1,40 +1,80 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const searchButton = document.getElementById('search-button');
-  const searchInput = document.getElementById('search-input');
-  const resultsContainer = document.getElementById('results-container');
+// Datos simulados con categorías
+const results = [
+  { title: "Cómo practicar yoga", description: "Guía básica para principiantes", img: "https://via.placeholder.com/300x150", category: "health" },
+  { title: "Últimas noticias del día", description: "Resumen de las noticias más importantes", img: "https://via.placeholder.com/300x150", category: "news" },
+  { title: "Galería de paisajes", description: "Disfruta de imágenes de la naturaleza", img: "https://via.placeholder.com/300x150", category: "images" },
+  { title: "Videos de animales divertidos", description: "Ríe con estos momentos graciosos", img: "https://via.placeholder.com/300x150", category: "videos" },
+  { title: "Ofertas de tecnología", description: "Compra dispositivos al mejor precio", img: "https://via.placeholder.com/300x150", category: "shopping" },
+  { title: "Reporte del clima", description: "Pronóstico del tiempo para la semana", img: "https://via.placeholder.com/300x150", category: "weather" },
+  { title: "Economía global", description: "Análisis financiero del mercado actual", img: "https://via.placeholder.com/300x150", category: "economy" },
+  { title: "Tutoriales de Photoshop", description: "Aprende a editar imágenes como un profesional", img: "https://via.placeholder.com/300x150", category: "images" },
+  { title: "Videos de recetas fáciles", description: "Cocina rápido y fácil con estas ideas", img: "https://via.placeholder.com/300x150", category: "videos" },
+  { title: "Noticias deportivas", description: "Entérate de los resultados del día", img: "https://via.placeholder.com/300x150", category: "news" }
+];
 
-  searchButton.addEventListener('click', function () {
-      const query = searchInput.value;
+// Elementos del DOM
+const searchInput = document.getElementById('search');
+const resultsContainer = document.getElementById('results-container');
+const categoryButtons = document.querySelectorAll('.category');
 
-      // Limpia resultados anteriores
-      resultsContainer.innerHTML = '';
+// Estado actual
+let currentCategory = "all";
 
-      // Resultados simulados
-      const sampleResults = [
-          { title: 'Resultado 1', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 1.' },
-          { title: 'Resultado 2', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 2.' },
-          { title: 'Resultado 3', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 3.' },
-          { title: 'Resultado 4', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 4.' },
-          { title: 'Resultado 5', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 5.' },
-          { title: 'Resultado 6', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 6.' },
-          { title: 'Resultado 7', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 7.' },
-          { title: 'Resultado 8', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 8.' },
-          { title: 'Resultado 9', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 9.' },
-          { title: 'Resultado 10', image: 'https://via.placeholder.com/150', description: 'Descripción del resultado 10.' },
-      ];
+// Filtrar resultados por categoría y búsqueda
+function searchMatches(query, category) {
+  const lowerCaseQuery = query.toLowerCase();
+  return results.filter(result =>
+      (category === "all" || result.category === category) &&
+      (result.title.toLowerCase().includes(lowerCaseQuery) || result.description.toLowerCase().includes(lowerCaseQuery))
+  );
+}
 
-      // Genera y muestra los resultados
-      sampleResults.forEach(result => {
-          const resultItem = document.createElement('div');
-          resultItem.classList.add('result-item');
+// Crear un resultado dinámico
+function createResult(result) {
+  const item = document.createElement('div');
+  item.classList.add('result-item');
 
-          resultItem.innerHTML = `
-              <img src="${result.image}" alt="${result.title}">
-              <h3>${result.title}</h3>
-              <p>${result.description}</p>
-          `;
+  const img = document.createElement('img');
+  img.src = result.img;
+  img.alt = result.title;
 
-          resultsContainer.appendChild(resultItem);
+  const title = document.createElement('h3');
+  title.textContent = result.title;
+
+  const description = document.createElement('p');
+  description.textContent = result.description;
+
+  item.appendChild(img);
+  item.appendChild(title);
+  item.appendChild(description);
+
+  return item;
+}
+
+// Actualizar los resultados
+function updateResults() {
+  const query = searchInput.value.trim();
+  resultsContainer.innerHTML = '';
+
+  const filteredResults = searchMatches(query, currentCategory);
+
+  if (filteredResults.length > 0) {
+      filteredResults.forEach(result => {
+          const resultElement = createResult(result);
+          resultsContainer.appendChild(resultElement);
       });
+  } else {
+      resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
+  }
+}
+
+// Manejar cambios en la categoría
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      currentCategory = button.getAttribute('data-category');
+      updateResults();
   });
 });
+
+// Escuchar cambios en el input
+searchInput.addEventListener('input', updateResults);
