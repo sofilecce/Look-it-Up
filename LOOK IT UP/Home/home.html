@@ -9,24 +9,28 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="home.css">
 </head>
-<body>
+<body class="d-flex flex-column justify-content-between" style="height: 100vh;">
     <!-- Contenido principal -->
-    <div class="content">
+    <div class="container d-flex flex-column justify-content-center align-items-center flex-grow-1 text-center">
         <!-- Logo -->
-        <img src="homee.png" alt="Logo" style="width: 500px; height: auto; margin-top: 3%;">
+        <img src="homee.png" alt="Logo" class="img-fluid my-3" style="max-width: 70%; height: auto;">
 
         <!-- Barra de búsqueda -->
-        <div class="search-container">
-            <div class="search-box">
-                <span class="owl">🦉</span>
-                <input type="text" id="search-bar" class="form-control" placeholder="Búscalo">
-                <button class="btn btn-secondary" onclick="search()">🔍</button>
+        <div class="container search-container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="search-box">
+                        <span class="owl">🦉</span>
+                        <input type="text" id="search-bar" class="form-control" placeholder="Búscalo">
+                        <button class="btn btn-secondary" onclick="search()">🔍</button>
+                    </div>
+                </div>
             </div>
         </div>
-
+        
         <!-- Imagen de Cierre de Sesión en la esquina superior derecha -->
-        <div class="log-out">
-            <img src="logout.png" alt="Logout" onclick="logout()">
+        <div class="log-out position-absolute top-0 end-0 p-3">
+            <img src="logout.png" alt="Logout" onclick="logout()" class="img-fluid" >
         </div>
     </div>
 
@@ -38,7 +42,6 @@
             <a href="https://www.linkedin.com/in/melanybertello/" target="_blank">Melany Bertello</a>
             <a href="https://www.linkedin.com/in/sofialecce/" target="_blank">Sofía Lecce</a>
             <a href="https://www.linkedin.com/in/rebecaferrel/" target="_blank">Rebeca Ferrel</a>
-            <a href="">Camila Maldonado</a>
         </div>
         <p class="fw-semibold mt-2">Copyright © 2024 Grupo 4 - MediaPila - Todos los derechos reservados.</p>
     </footer>
