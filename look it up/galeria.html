@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Paisajes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .gallery-item {
+            width: 30%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Galería de Paisajes</h1>
+    <p>Explora la belleza de los paisajes naturales desde cualquier lugar del mundo.</p>
+</header>
+
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqXYXpWatuPQj-zUK7QHuQS04rIPS0a2jhlQ&s" alt="Paisaje 1">
+    </div>
+    <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1xswp57pALGmC6UAIe6u01lTRelMdtTsLyQ&s" alt="Paisaje 2">
+    </div>
+    <div class="gallery-item">
+        <img src="https://i.pinimg.com/736x/67/bb/93/67bb93e9509be7a38ed52f2e1ec6b7fd.jpg" alt="Paisaje 3">
+    </div>
+    <div class="gallery-item">
+        <img src="https://diariodiez.ar/download/multimedia.normal.a6025f37a7effd33.QnVlbm9zX0FpcmVzX25vcm1hbC5qcGc%3D.jpg" alt="Paisaje 4">
+    </div>
+    <div class="gallery-item">
+        <img src="https://www.westernunion.com/blogs-staticassets/R24-12.01.1/media/Los_5_mejores_paises_para_visitar_en_Latinoamerica.jpg" alt="Paisaje 5">
+    </div>
+    <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKa2MQYNqwc7KyKcby4Jy5RCPYAAOuOcQ0N3dmH-30VYAvYpUQz4-_FPw-H2l0TTl8kY&usqp=CAU">
+    </div>
+    <div class="gallery-item">
+        <img src="https://www.clarin.com/img/2023/10/03/96KgOJQcK_2000x1500__1.jpg" alt="Paisaje 7">
+    </div>
+    <div class="gallery-item">
+        <img src="https://hips.hearstapps.com/elle-es/assets/15/37/original/original-6flechazos-news-paisajes-mas-bonitos-mundo-9-cristo-redentor-11733889-1-esl-es-9-cristo-redentor-jpg.jpg" alt="Paisaje 8">
+    </div>
+    <div class="gallery-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVBuIm3rlpEbYDj2wF3zrGkAVVBhyXMPhtLQ&s" alt="Paisaje 9">
+    </div>
+</div>
+
+<footer>
+    <p>Copyright &copy; 2024 Galería de Paisajes. Todos los derechos reservados.</p>
+</footer>
+
+<script src="inicio.js"></script>
+</body>
+</html>

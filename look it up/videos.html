@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Divertidos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .gallery-item {
+            width: 30%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Videos Divertidos</h1>
+    <p>Disfruta de esta colección de adorables y graciosos GIFs de animales que te alegrarán el día.</p>
+</header>
+
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="https://i.pinimg.com/originals/39/1f/4e/391f4eff85a6d87be634724b556fdf43.gif" alt="Gato divertido">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.giphy.com/media/1g3A0gpaidxWcL9Mfo/giphy.gif" alt="Perro divertido">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif" alt="Mono gracioso">
+    </div>
+    <div class="gallery-item">
+        <img src="https://24.media.tumblr.com/d9a881a34758a844f42c51610f8a14f3/tumblr_mi2ku46LVZ1qadcwao1_500.gif" alt="Pájaro divertido">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.tenor.com/Vhz0Gb9bbAUAAAAM/snoopy-giggle.gif" alt="Hámster gracioso">
+    </div>
+    <div class="gallery-item">
+        <img src="https://i.gifer.com/9lRV.gif" alt="Erizo divertido">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.giphy.com/media/YTbZzCkRQCEJa/giphy.gif" alt="Caballo gracioso">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Panda divertido">
+    </div>
+    <div class="gallery-item">
+        <img src="https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif" alt="Gato divertido 2">
+    </div>
+</div>
+
+<footer>
+    <p>Copyright &copy; 2024 Galería de GIFs de Animales Divertidos. Todos los derechos reservados.</p>
+</footer>
+
+<script src="inicio.js"></script>
+</body>
+</html>
