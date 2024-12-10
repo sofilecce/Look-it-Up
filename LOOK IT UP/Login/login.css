@@ -1,0 +1,166 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    box-sizing: border-box; 
+    overflow-x: hidden; 
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    background-image: url('Fondo.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; 
+}
+
+.logo {
+    max-width: 600px; 
+    width: 100%;      
+    height: auto;    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+}
+
+.login-container {
+    padding: 30px;
+    background-color: #28a39965;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+    max-width: 550px; 
+    width: calc(100% - 20px); /* Deja un espacio de 20px a cada lado */
+}
+
+/* Título */
+.login-container h1 {
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px !important;
+}
+
+.login-container input {
+    font-size: 14px; /* Para aumentar el tamaño de los inputs */
+    padding: 13px; 
+    background-color: #bfeae087;
+    color: #000;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid #bfeae087; 
+}
+
+.login-container input:focus {
+    background-color: #d6f2eb; 
+    border: 2px solid #358375; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(53, 131, 117, 0.5); 
+}
+
+.login-container input:hover {
+    border: 2px solid #4e9c8e; 
+    box-shadow: 0 0 5px rgba(78, 156, 142, 0.5); 
+}
+
+#loginButton {
+    background-color: #269d93;
+    font-size: 20px;
+    color: #000;
+    padding: 8px 20px; 
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.2s;
+    margin: 0 auto; 
+    outline: none; 
+    border: none;
+}
+
+#loginButton:hover {
+    background-color: #20867d;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Oculta el checkbox azul */
+.checkbox-container .form-check-input {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #28a3994f; 
+    border-radius: 5px; 
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-container .form-check-input:checked {
+    border-color: #1e7871; 
+    background-color: #20867d; 
+}
+
+.checkbox-container .form-check-input:hover {
+    border-color: #28a399;
+    box-shadow: 0 0 5px rgba(78, 156, 142, 0.5);
+}
+
+.social-login img:hover {
+    transform: scale(1.1); /* zoom más pronunciado */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px; 
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* zoom al pasar el cursor */
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(40, 163, 153, 0.157);
+    color: #000;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px;
+    position: relative;
+    backdrop-filter: blur(5px); /* Efecto borroso para el fondo */
+}
+
+/* Estilos para los enlaces del footer */
+.footer-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 649;
+    background-color: #bfeae075;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 20px;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #4a7f7b;
+}
+
+/* Efecto de zoom y sombra al pasar el mouse */
+.footer-links a:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #4a7f7b81; /* Cambia el fondo cuando pasa el mouse */
+    color: #e3f4ef; /* Puedes cambiar el color del texto si lo deseas */
+}

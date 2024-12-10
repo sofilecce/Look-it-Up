@@ -1,0 +1,173 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(Fondo.png);
+  background-size: cover; 
+  background-repeat: no-repeat; /* Evita que el fondo se repita */
+  background-position: center; 
+  background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+  display: flex;              /* Usamos flexbox para organizar el contenido */
+  flex-direction: column;     /* Los elementos se disponen en columna */
+  min-height: 100vh;          /* Hace que el cuerpo tenga una altura mínima del 100% de la ventana */
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px #4a7f7b;
+}
+
+#search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#search {
+  width: 60%;
+  padding: 13px;
+  font-size: 1rem;
+  border: 2px solid #4a7f7b;
+  border-radius: 25px;
+  outline: none;
+  background-color: #eafff5; /* Fondo blanco por defecto */
+}
+
+#search:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(42, 93, 86, 0.754); /* Resaltado con borde transparente */
+  border: 2px solid #4a7f7b; /* Borde transparente para mantener el espacio */
+  background-color: #d4f0e3; /* Fondo de color diferente al enfocar */
+}
+
+
+#categories {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.category {
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  color: #1c3e39;
+  font-weight: bold;
+  display: inline-block;
+  outline: none; /* Elimina el borde azul */
+  border: 2px solid #2a5d56; /* Borde verde visible siempre */
+}
+
+.category:hover {
+  background-color: #4a7f7b;
+  color: #fff;
+  border-color: #2a5d56;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.results-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  height: 350px; /* Altura fija para todos los resultados */
+  padding: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.results-item img {
+  width: 100%;  /* La imagen se ajusta al ancho del contenedor */
+  height: 200px; /* Establece una altura fija para la imagen */
+  object-fit: cover; /* Hace que la imagen cubra el área sin distorsionarse */
+}
+
+
+.results-item h3, .result-item p {
+  padding: 10px; 
+  text-align: center; 
+}
+
+.results-item:hover {
+  transform: scale(1.1);
+}
+  
+.mt-3 {
+  margin-top: 0 !important;
+}
+
+.results-item h3 {
+  font-size: 23px;  
+  font-weight: bold;  
+  color: #1c3e39;         
+  margin-bottom: 0px;
+}
+
+.results-item p {
+  font-size: 15px;    
+  color: #1c3e39;       
+  text-align: center;  
+  margin-top: 0;         
+}
+
+a {
+  text-decoration: none; /* Elimina el subrayado de todos los enlaces */
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(40, 163, 153, 0.157);
+  color: #000;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px;
+  position: relative;
+  backdrop-filter: blur(5px); /* Efecto borroso para el fondo */
+}
+
+/* Estilos para los enlaces del footer */
+.footer-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 649;
+  background-color: #bfeae075;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 20px;
+  width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #4a7f7b;
+}
+
+/* Efecto de zoom y sombra al pasar el mouse */
+.footer-links a:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #4a7f7b81; /* Cambia el fondo cuando pasa el mouse */
+  color: #e3f4ef; /* Puedes cambiar el color del texto si lo deseas */
+}
+

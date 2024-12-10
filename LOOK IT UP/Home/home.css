@@ -1,0 +1,116 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(Fondo.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh;
+}
+
+.content {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.owl{
+    margin-right: 10px;
+}
+
+.search-container {
+    margin: 20px auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #774d1e;
+    border-radius: 30px;
+    padding: 10px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1d1309;
+    font-size: 20px;
+    flex: 1;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    color: #b47a38;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#search-bar:focus {
+    background-color: #c0a07b; 
+    border-color: #b47a38; 
+    outline: none; 
+    box-shadow: none; 
+    color: #000;
+}
+
+.log-out {
+    position: absolute;
+    top: 20px;  
+    right: 20px; 
+    z-index: 1000; 
+}
+
+.log-out img {
+    width: 80px;  
+    height: 80px; 
+    object-fit: cover; 
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(40, 163, 153, 0.157);
+    color: #000;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px;
+    position: relative;
+    backdrop-filter: blur(5px); /* Efecto borroso para el fondo */
+}
+
+/* Estilos para los enlaces del footer */
+.footer-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 649;
+    background-color: #bfeae075;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 20px;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #4a7f7b;
+}
+
+/* Efecto de zoom y sombra al pasar el mouse */
+.footer-links a:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #4a7f7b81; /* Cambia el fondo cuando pasa el mouse */
+    color: #e3f4ef; /* Puedes cambiar el color del texto si lo deseas */
+}
