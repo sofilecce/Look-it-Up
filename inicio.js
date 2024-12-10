@@ -3,7 +3,7 @@ const results = [
   { title: "Cómo practicar yoga", description: "Guía básica para principiantes", img: "https://c.stocksy.com/a/ivPH00/z9/4151254.jpg", category: "health" },
   { title: "Últimas noticias del día", description: "Resumen de las noticias más importantes", img: "https://www.clarin.com/img/2024/12/03/Buqd9Yjc8_720x0__1.jpg", category: "news" },
   { title: "Galería de paisajes", description: "Disfruta de imágenes de la naturaleza", img: "https://wallpapers.com/images/hd/aesthetic-nature-tumblr-yx09mp7zrksyvs1e.jpg", category: "images" },
-  { title: "Videos de animales divertidos", description: "Ríe con estos momentos graciosos", img: "https://i.pinimg.com/736x/14/23/02/14230237bd91350b6e74a6673b8dde28.jpg", category: "videos" },
+  { title: "Gifs divertidos", description: "Ríe con estos momentos graciosos", img: "https://i.pinimg.com/736x/14/23/02/14230237bd91350b6e74a6673b8dde28.jpg", category: "videos" },
   { title: "Ofertas de tecnología", description: "Compra dispositivos al mejor precio", img: "https://i.pinimg.com/236x/b9/8a/c7/b98ac7158e4490754b4d1b8763b83191.jpg", category: "shopping" },
   { title: "Reporte del clima", description: "Pronóstico del tiempo para la semana", img: "https://play-lh.googleusercontent.com/znc7FD1BqyFR92b8n6hyROZrAR3FsTyV_ThO79hyuQG-Nb45z2qHFDTnf1HXH50DYg", category: "weather" },
   { title: "Economía global", description: "Análisis financiero del mercado actual", img: "https://comprometidosconasturias.com/wp-content/uploads/2022/02/Situacion-Actual-y-Previsiones-de-la-Economia-Mundial-para-2022.jpg", category: "economy" },
@@ -14,7 +14,7 @@ const results = [
 
 // Elementos del DOM
 const searchInput = document.getElementById('search');
-const resultsContainer = document.querySelector('#results-container .row');
+const resultsContainer = document.getElementById('results-container');
 const categoryButtons = document.querySelectorAll('.category');
 
 // Estado actual
@@ -24,24 +24,23 @@ let currentCategory = "all";
 function searchMatches(query, category) {
   const lowerCaseQuery = query.toLowerCase();
   return results.filter(result =>
-    (category === "all" || result.category === category) &&
-    (result.title.toLowerCase().includes(lowerCaseQuery) || result.description.toLowerCase().includes(lowerCaseQuery))
+      (category === "all" || result.category === category) &&
+      (result.title.toLowerCase().includes(lowerCaseQuery) || result.description.toLowerCase().includes(lowerCaseQuery))
   );
 }
 
 // Crear un resultado dinámico
 function createResult(result) {
   const item = document.createElement('div');
-  item.classList.add('result-item', 'col-md-4', 'mb-4'); // Clases de Bootstrap
+  item.classList.add('result-item');
 
   const img = document.createElement('img');
   img.src = result.img;
   img.alt = result.title;
-  img.classList.add('img-fluid', 'rounded'); // Clases para imágenes responsivas
+  
 
   const title = document.createElement('h3');
   title.textContent = result.title;
-  title.classList.add('mt-3');
 
   const description = document.createElement('p');
   description.textContent = result.description;
@@ -56,19 +55,20 @@ function createResult(result) {
 // Actualizar los resultados
 function updateResults() {
   const query = searchInput.value.trim();
-  resultsContainer.innerHTML = ''; // Limpiar contenedor
+  resultsContainer.innerHTML = '';
 
   const filteredResults = searchMatches(query, currentCategory);
 
   if (filteredResults.length > 0) {
-    filteredResults.forEach(result => {
-      const resultElement = createResult(result);
-      resultsContainer.appendChild(resultElement);
-    });
+      filteredResults.forEach(result => {
+        const resultElement = createResult(result);
+        resultsContainer.appendChild(resultElement);
+      });
   } else {
-    resultsContainer.innerHTML = '<p class="text-center text-muted">No se encontraron resultados.</p>';
+      resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
   }
 }
+
 
 // Manejar cambios en la categoría
 categoryButtons.forEach(button => {
@@ -80,12 +80,42 @@ categoryButtons.forEach(button => {
 
 // Escuchar cambios en el input
 searchInput.addEventListener('input', updateResults);
-
 // Leer el parámetro "search" de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get('search');
-
 if (query) {
-  searchInput.value = query; // Mostrar la búsqueda en el input
-  updateResults();           // Actualizar los resultados según el query
+searchInput.value = query; // Mostrar la búsqueda en el input
+updateResults();          // Actualizar los resultados según el query
+}
+
+
+// Crear un resultado dinámico
+function createResult(result) {
+  const item = document.createElement('div');
+  item.classList.add('result-item');
+
+  // Crear el enlace envolvente
+  const link = document.createElement('a');
+  link.href = `/yoga.html?title=${encodeURIComponent(result.title)}`; // Cambiala URL de destino
+  link.classList.add('result-link'); 
+
+// Resultado
+  const img = document.createElement('img');
+  img.src = result.img;
+  img.alt = result.title;
+
+  const title = document.createElement('h3');
+  title.textContent = result.title;
+
+  const description = document.createElement('p');
+  description.textContent = result.description;
+
+// Agregar los elementos dentro del enlace
+  link.appendChild(img);
+  link.appendChild(title);
+  link.appendChild(description);
+
+  item.appendChild(link);
+
+  return item;
 }
